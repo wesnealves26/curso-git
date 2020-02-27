@@ -1,0 +1,94 @@
+Criando Repositório Git:
+
+Criar um arquivo de texto, chamado git e alterar o nome para .gitignore
+-> Na pasta onde está criando o arquivo,  Shift + Botão Direito.
+-> Abrir janela de comando aqui.
+-> ren git.txt .gitignore
+Nota:   ren (comando renomear)
+	git.txt (nome do arquivo e seu tipo)
+	.gitignore (nome que vai ser dado ao arquivo git.txt)
+
+**Tudo que conter no arquivo .gitignore, vai ser ignorado quando for fazer o envio para o repositório.**
+Nota: No caso de enviar o Visual Studio, pode-se pesquisar por ".gitignore Visual Studio 2019", acessar o link do proprio GitHub
+fazer a cópia das linhas e salvar no arquivo .gitignore
+
+=========//=========//=========//=========//=========//=========//=========//=========//=========//=========//=========//=======//
+Configurando a Idenficação de Usuario no Git:
+
+Utilizar o Git Bash Here na pasta.
+-> git init (Inicia uma novo repositório)
+-> git config --global user.name "Wesne Alves" (Configura o nome do usuario)
+-> git config --global user.email "wesne.silva@etec.sp.gov.br" (Configura o email do usuario)
+Nota: Utilizar o mesmo email do cadastro no GitHub.
+Nota²: Pode se utilizar os comandos para trocar a conta que está enviando os commits.
+
+=========//=========//=========//=========//=========//=========//=========//=========//=========//=========//=========//=======//
+Salvar uma "versão" do projeto:
+
+-> git status (Verifica como está o repositório)
+vermelho: arquivos não rastreados (untracked)
+verde: arquivos pronto para serem "commitados" (stage)
+Nota: Pode ser usado para verificar arquivos para enviar.
+-> git add . (Indica que o/s arquivo/s estão prontos para serem "commitados")
+'.': Indica que TODOS os arquivos estão prontos para serem enviados.
+-> git commit -m "Mensagem para servir de informação sobre oque foi feito." (Envia os arquivos prontos para serem enviados)
+-> git log (verifica  e exibe os commits feitos, por quem e quando)
+Nota: git log --oneline (mostra uma versão resumida dos commits)
+
+=========//=========//=========//=========//=========//=========//=========//=========//=========//=========//=========//=======//
+Descartar todas as modificações, voltando ao estado do commit atual:
+
+-> git clean -df
+-> git checkout -- .
+Nota: os dois devem ser executados em sequencia.
+
+=========//=========//=========//=========//=========//=========//=========//=========//=========//=========//=========//=======//
+Desfazer o último commmit:
+
+-> git reset --soft HEAD~1 (Remove o último commit, mantendo as alterações nos arquivos)
+-> git reset --hard HEAD~1 (Remove o último commit, INCLUSIVE as alterações nos arquivos, voltando para o commit anterior)
+
+=========//=========//=========//=========//=========//=========//=========//=========//=========//=========//=========//=======//
+Navegar entre os commits, alterando os arquivos temporariamente:
+
+-> git checkout <código do commit> (Acessa o projeto no estado do commit desejado, o código está no git log)
+-> git checkout <nome do branch> (Volta pro ultimo commit que estava, no caso o branch pode ser o master)
+Nota: Para realizar isso, não pode ter nada a ser commitado.
+
+=========//=========//=========//=========//=========//=========//=========//=========//=========//=========//=========//=======//
+Criar um repositório remoto:
+via site github.com
+
+-> Create Repository (Clicar na logo, ele já vai pra pagina para criar)
+-> Definir o nome.
+-> Descrição opcional.
+-> Configurar se precisar. (README , .gitignore, etc..)
+
+=========//=========//=========//=========//=========//=========//=========//=========//=========//=========//=========//=======//
+Associando um repositório remoto ao seu repositório local:
+
+-> git remote add origin <URI do repositório remoto>
+Nota: Associa o rep.local ao rep.remoto, dando o apelido de "origin" a ele.
+-> git remote set-url origin <URI do repositório remoto>
+Nota: Associa o rep.local a outro rep.remoto, porém mantem o mesmo apelido.
+
+=========//=========//=========//=========//=========//=========//=========//=========//=========//=========//=========//=======//
+Subindo o repositório local para o GitHub:
+
+-> git push -u origin master (Envia os arquivos do rep.Local para o rep.Remoto/GitHub)
+Nota: origin é o apelido dado ao rep. e master é a breanch atual.
+Nota²: Depois da primeira vez, pode-se se usar apenas o 'git push' para enviar.
+
+=========//=========//=========//=========//=========//=========//=========//=========//=========//=========//=========//=======//
+Copiando um repositório remoto para seu computador:
+
+-> git clone <URI do rep. remoto> (Copia o repositório, inclusive o histórico de commits)
+Nota: Simplesmente baixar os arquivos, não trás o histórico de commits.
+
+=========//=========//=========//=========//=========//=========//=========//=========//=========//=========//=========//=======//
+Atualizar repositório local:
+
+-> git pull origin master (Puxa as atualizações do rep.Remoto para o rep.Local)
+
+=========//=========//=========//=========//=========//=========//=========//=========//=========//=========//=========//=======//
+
